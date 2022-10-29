@@ -14,7 +14,7 @@ class Question(Base):
     choice3 = Column(String, nullable = False)
     choice4 = Column(String, nullable = False)
     correct_choice = Column(String, nullable = False)
-    published = Column(Boolean, server_default= 'TRUE', nullable=False)
+    published = Column(Boolean, server_default= 'FALSE', nullable=False)
     created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default= text('now()') )
     owner_id = Column(Integer, ForeignKey("users.id", ondelete="CASCADE" ), nullable = False)
 

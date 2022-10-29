@@ -64,8 +64,6 @@ def get_current_user(token: str = Depends(oauth2_scheme),db: Session = Depends(d
 
     user = db.query(models.User).filter(models.User.id == token.id).first()
 
-    return user
- 
     '''
     this is used for specific endpoints thst should be protected.
     eg: if to create a post, users need to be logged in.
@@ -76,3 +74,6 @@ def get_current_user(token: str = Depends(oauth2_scheme),db: Session = Depends(d
 
     the  user_id: int = Depends(oauth2.get_current_user) is the dependency added.
     '''
+    return user
+ 
+
